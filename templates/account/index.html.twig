@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello AccountController!{% endblock %}
+
+{% block body %}
+<h1> Mon Compte </h1>
+     
+     Bonjour. {{ app.User.firstname}} Bienvenue sur votre compte. C'est dans cet espace que vous pourrez gérer toutes vos informations personnelles.
+    <hr>
+      {% if is_granted('ROLE_ADMIN') %}
+     - <a href="{{ path ('admin') }}">Administration du site</a><br/>
+     {% endif %}
+
+     <hr>
+    
+{% endblock %}

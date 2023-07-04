@@ -1,0 +1,29 @@
+.titre
+{
+text-align: center;
+color:#873e23
+}
+
+.body
+{
+    position:relative;
+}
+
+.footer {
+   position: absolute;
+}
+
+.category-item {
+    margin-top: 50px;
+}
+
+.category-item .product-description {
+    font-size: 14px;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.product-container {
+    margin-botton: 150px;
+}
+

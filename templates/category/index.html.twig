@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello CategoryController!{% endblock %}
+
+{% block body %}
+
+<div class="row">
+     <div class="col-md-3">
+          <h3> Filtrer </h3>
+          {{ form(form) }}
+    </div>
+     <div class="col-md-9">
+<h3> NOS ANIMAUX</h3>
+
+<div class="row ">
+    {% for category in category %}
+        <div class="col-md-4">
+            <div class="category-item text-center">
+            <img src="{{ asset('assets/pictures/' ~ category.illustration) }}"  alt="{{ category.name}}" class="img-fluid">
+               <h4>{{ category.name}}</h4>
+               <h5> {{ category.description}}</h5>
+             </div>
+          </div>
+       {% endfor %}
+    </div>
+  </div>
+</div>
+{% endblock %}
