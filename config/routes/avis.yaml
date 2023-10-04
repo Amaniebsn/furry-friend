@@ -1,0 +1,4 @@
+avis_index:
+    path: /avis
+    controller: App\Controller\AvisController::index
+    methods: GET

@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{% endblock %}
+
+{% block body %}
+   <div style="text-align: center;">
+               <img src="{{ asset('assets/pictures/' ~ animal.illustration) }}" width="500" height="500"alt="{{ animal.name}}"/>
+               <h4 class="text">{{ animal.name}}</h4>
+               <p class="text"> {{ animal.description}}</p>
+   </div>  
+
+   {% if app.user %}
+<p class="text"> Pour Pré finaliser votre demander veuillez entrer vos informations ici
+           <a class="nav-link" href="{{ path('app_traiter_demande') }}"> Adopter </a></p>
+  {% endif %}
+{% endblock %}

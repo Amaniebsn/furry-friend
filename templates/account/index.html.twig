@@ -3,14 +3,16 @@
 {% block title %}Hello AccountController!{% endblock %}
 
 {% block body %}
-<h1> Mon Compte </h1>
+<h1 class="titre"> Mon Compte </h1>
      
-     Bonjour. {{ app.User.firstname}} Bienvenue sur votre compte. C'est dans cet espace que vous pourrez gérer toutes vos informations personnelles.
+    <p class="text"> Bonjour. {{ app.User.firstname}} Bienvenue sur votre compte. C'est dans cet espace que vous pourrez gérer toutes vos informations personnelles.</p>
     <hr>
       {% if is_granted('ROLE_ADMIN') %}
      - <a href="{{ path ('admin') }}">Administration du site</a><br/>
-     {% endif %}
-
-     <hr>
     
+     {% endif %}
+    <p class="text"> Pour Pré finaliser votre demander veuillez entrer vos informations ici
+           <a class="nav-link" href="{{ path('app_traiter_demande') }}"> Adopter </a></p>
+     
+     <hr>
 {% endblock %}

@@ -21,7 +21,7 @@ class SearchType extends AbstractType
         'required' => false,
         'attr' => [
             'placeholder' => 'Rechercher...',
-            'class' => 'form-control-sm'
+            'class' => 'form-control'
                   ]
            ])
     ->add('categories', EntityType::class, [
@@ -43,7 +43,7 @@ public function configureOptions(OptionsResolver $resolver): void
 {
     $resolver->setDefaults([
         'data_class' => Search::class,
-        'method' => 'GET',
+        'method' => 'POST',
         'crsf_protection' => false,
     ]);
 }

@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Avis{% endblock %}
+
+{% block body %}
+
+{{ form_start(form) }}
+<div style="text-align: center;">
+  <div class="mb-3">
+    <label for="exampleInputEmail1" class="form-label">Avis</label>
+     <div class="">{{ form_widget(form.description) }}</div>
+
+  </div>
+  <div class="mb-3">
+    <label for="exampleInputPassword1" class="form-label">Note</label>
+     <div class="">{{ form_widget(form.Note) }}</div>
+  </div>
+  </div>
+{{ form_end(form) }}
+
+
+
+{% endblock %}

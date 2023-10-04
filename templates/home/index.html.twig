@@ -4,11 +4,83 @@
 
 {% block body %}
 
-
 <div class="titre">
 <h1> FURRY FRIENDS </h1>
 <h3> ADOPTE TON NOUVEL AMI POUR LA VIE </h3>
 </div>
+
+<div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+  </div>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <div class="col"><img src="{{ asset('assets/pictures/img1.jpg') }}"width="1450" height="500" /></div>
+      <div class="carousel-caption d-none d-md-block">
+        <h5>Les conditions d'adoption</h5>
+        <p>Vous devez être majeur et vous inscrire dans une démarche d'adoption responsable. Une participation financière vous sera demandée selon l’espèce et la situation de l’animal.</p>
+      </div>
+    </div>
+    <div class="carousel-item">
+    <div class="col"><img src="{{ asset('assets/pictures/img2.jpg') }}"width="1450" height="500" /></div>
+      <div class="carousel-caption d-none d-md-block">
+        <h5>L'adoption responsable</h5>
+        <p>Nous veillions à ce que chaque décision soit mûrement réfléchie et que l’animal adopté corresponde à sa nouvelle famille et à son mode de vie.</p>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <div class="col"><img src="{{ asset('assets/pictures/img3.jpg') }}"width="1450" height="500"/></div>
+      <div class="carousel-caption d-none d-md-block">
+        <h5>Le parcours d'adoption</h5>
+        <p>Pour adopter à la SPA, vous devrez nous décrire votre mode de vie et vos attentes. Le formulaire adoptant est fait pour cela. Remplissez dès maintenant !</p>
+      </div>
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+
+<div class="text-center">
+ <video controls style="width: 400px; height: 450px;" >
+    <source src="{{ asset('assets/pictures/video1.mov') }}"type="video/mp4">
+    <!-- Vous pouvez également inclure d'autres formats vidéo ici pour une meilleure compatibilité avec différents navigateurs -->
+  </video>
+
+</div>
+<div class="text">
+<h3>FURRY FRIENDS, c’est actuellement 5256 animaux (chiens, chats, chevaux, lapins…) à adopter</h3>
+</div>
+
+<div class="text-center">
+<img src="{{ asset('assets/pictures/home1.jpg') }}"width="300" height="300"/>
+<img src="{{ asset('assets/pictures/home2.jpg') }}"width="300" height="300"/>
+</div>
+<div class="text-center">
+<img src="{{ asset('assets/pictures/home3.jpg') }}"width="300" height="300"/>
+<img src="{{ asset('assets/pictures/home4.jpg') }}"width="300" height="300"/>
+ </div>
+<hr>
+
+ <h4 class="titre">L'ADOPTION RESPONSABLE<h4>
+<h3 class="text">Adopter un animal (chien, chat, cheval, lapin, hamster, souris etc…) est un acte sérieux et une démarche qui se doit responsable. C’est un engagement financier et personnel afin d’offrir bien-être et santé à l’animal. En tant qu’être vivant, chaque animal, quelle que soit son espèce, mérite du temps, de l’attention et de l’amour ! L’adoption implique tous les membres d’une famille qui s’engagent à respecter et à prendre soin de leur compagnon.
+
+Par l’adoption responsable, la SPA veille à ce que cet engagement soit mûrement réfléchi pour éviter un nouvel abandon et un retour au refuge quelques semaines après l’adoption. Grâce aux conseils et à l’accompagnement de nos équipes, seulement 3,8% des animaux adoptés sont revenus dans nos refuges en 2020.
+
+Des milliers d’animaux vous attendent chaque jour de l’année dans nos refuges. Ils rêvent d’un foyer aimant, d’une seconde chance.
+
+Bonne chance dans votre démarche d’adoption responsable !
+
+OFFREZ-LEUR LA VIE QU’ILS MÉRITENT
+</h3>
+
 
 
 {% endblock %}

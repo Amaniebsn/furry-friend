@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello animal!{% endblock %}
+
+{% block body %}
+
+<div class="row">
+     <div class="col-md-3">
+          <h3 class="text"> Filtrer </h3>
+          {{ form(form) }}
+    </div>
+     <div class="col-md-9">
+<h3 class="titre"> NOS ANIMAUX</h3>
+
+<div class="row ">
+    {% for animal in animals %}
+         <div class="col-md-4">
+          <div class="animal-item text-center">
+      
+               <a href="{{ path('app_animal_details',{ 'id' : animal.id }) }}"> <img src="{{ asset('assets/pictures/' ~ animal.illustration) }}"  alt="{{ animal.name}}" class="center-fluid"> </a>
+               <h4 class="text">{{ animal.name}}</h4>
+              
+            </div>
+         </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+{% endblock %}

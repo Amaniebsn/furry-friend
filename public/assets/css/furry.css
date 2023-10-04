@@ -1,23 +1,19 @@
 .titre
 {
 text-align: center;
-color:#873e23
-}
-
-.body
-{
-    position:relative;
+color:white;
+text-decoration: overline;
 }
 
 .footer {
-   position: absolute;
+   background-color: beige;
 }
 
-.category-item {
+.animal-item {
     margin-top: 50px;
 }
 
-.category-item .product-description {
+.animal-item .product-description {
     font-size: 14px;
     display: block;
     margin-bottom: 10px;
@@ -25,5 +21,21 @@ color:#873e23
 
 .product-container {
     margin-botton: 150px;
+}
+
+body {
+    background-color:  #3e2003 ;
+
+}
+
+.text {
+    color: white;
+   font-style: italic;
+   text-align: center;
+}
+
+.center-image {
+    display: block;
+    margin: 0 auto;
 }
 

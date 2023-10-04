@@ -3,9 +3,12 @@
 namespace App\Entity;
 
 use App\Repository\CategoryRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 #[ORM\Entity(repositoryClass: CategoryRepository::class)]
+#[ORM\Table(name: 'category')]
 class Category
 {
     #[ORM\Id]
@@ -16,12 +19,19 @@ class Category
     #[ORM\Column(length: 255)]
     private ?string $name = null;
 
-    #[ORM\Column(length: 255)]
-    private ?string $description = null;
+    #[ORM\OneToMany(mappedBy: 'category', targetEntity: Animals::class)]
+    private Collection $animals;
 
-    #[ORM\Column(length: 255)]
-    private ?string $illustration = null;
-
+    public function __construct()
+    {
+        $this->products = new ArrayCollection();
+        $this->animals = new ArrayCollection();
+    }
+   
+    public function __toString(){
+        return $this->getName();
+    }
+    
     public function getId(): ?int
     {
         return $this->id;
@@ -39,62 +49,37 @@ class Category
         return $this;
     }
 
-    public function getDescription(): ?string
-    {
-        return $this->description;
-    }
-
-    public function setDescription(string $description): static
-    {
-        $this->description = $description;
-
-        return $this;
-    }
-
-    public function getIllustration(): ?string
-    {
-        return $this->illustration;
-    }
-
-    public function setIllustration(string $illustration): static
-    {
-        $this->illustration = $illustration;
-
-        return $this;
-    }
-
     /**
-     * @return Collection<int, Category>
+     * @return Collection<int, Animals>
      */
-    public function getProducts(): Collection
+    public function getAnimals(): Collection
     {
-        return $this->Category;
+        return $this->animals;
     }
 
-    public function addCategory(Category $category): self
+    public function addAnimal(Animals $animal): static
     {
-        if (!$this->category->contains($category)) {
-            $this->category->add($category);
-            $category->setCategory($this);
+        if (!$this->animals->contains($animal)) {
+            $this->animals->add($animal);
+            $animal->setCategory($this);
         }
 
         return $this;
     }
 
-    public function removeCategory(Category $category): self
+    public function removeAnimal(Animals $animal): static
     {
-        if ($this->category->removeElement($category)) {
+        if ($this->animals->removeElement($animal)) {
             // set the owning side to null (unless already changed)
-            if ($category->getCategory() === $this) {
-                $category->setCategory(null);
+            if ($animal->getCategory() === $this) {
+                $animal->setCategory(null);
             }
         }
 
         return $this;
     }
 
-    public function __toString()
-{
-    return $this->name; // Ou tout autre attribut ou combinaison d'attributs que vous souhaitez afficher
-}
+ 
+
+
 }

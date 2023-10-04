@@ -2,7 +2,7 @@
 
 namespace App\Controller\Admin;
 
-use App\Entity\Category;
+use App\Entity\Animals;
 use App\Entity\User;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Dashboard;
 use EasyCorp\Bundle\EasyAdminBundle\Config\MenuItem;
@@ -25,7 +25,7 @@ class DashboardController extends AbstractDashboardController
     public function index(): Response
     {
         $url = $this->adminUrlGenerator
-            ->setController(CategoryCrudController::class)
+            ->setController(AnimalsCrudController::class)
             ->setController(UserCrudController::class)
 
             ->generateUrl();
@@ -59,9 +59,9 @@ class DashboardController extends AbstractDashboardController
 
     public function configureMenuItems(): iterable
     {
-        yield MenuItem::subMenu('Category', 'fas fa-bar')->setSubItems([
-            MenuItem::linkToCrud('Create Category', 'fas fa-plus-circle', Category::class)->setAction(Crud::PAGE_NEW),
-            MenuItem::linkToCrud('Show Category', 'fas fa-eye', Category::class),
+        yield MenuItem::subMenu('Animals', 'fas fa-bar')->setSubItems([
+            MenuItem::linkToCrud('Create Animals', 'fas fa-plus-circle', Animals::class)->setAction(Crud::PAGE_NEW),
+            MenuItem::linkToCrud('Show Animals', 'fas fa-eye', Animals::class),
         ]);
 
         yield MenuItem::subMenu('User', 'fas fa-bar')->setSubItems([

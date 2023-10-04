@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{% endblock %}
+
+{% block body %}
+
+<h1 class="titre"> INFORMATIONS </h1>
+<hr>
+   
+   <a href="{{ path('app_adoption') }}"><h3 class="titre"> ADOPTER </h3></a>
+
+<p class="text"> Agrandir sa famille, son foyer est une importante décision. Les refuges de la Société Protectrice des Animaux accueillent des milliers d'animaux qui espèrent une seconde chance. L'adoption responsable est une décision réfléchie, ne vous inquiétez pas, ils vous le rendront au centuple ! 😊😺🐶🐹🐴 </p>
+
+   <a href="{{ path('app_soins') }}"><h3 class="titre"> PRENDRE SOIN </h3></a>
+
+<p class="text"> Votre animal compte énormément pour vous ? Vous veillez à sa santé, son bonheur et son épanouissement ? 
+                 Furry Friends vous aide à prendre soin de votre animal de compagnie ! </p>
+
+  <a href="{{ path('app_maltraitance') }}"><h3 class="titre"> MALTRAITANCE </h3></a>
+ 
+ <p class="text"> Vous êtes témoin d'une maltraitance ? Renseignez-vous sur les signes d'alerte et prenez contact avec FurryFriends pour la signaler. Nos 700 Délégués-Enquêteurs, notre Cellule Anti-Traffic et notre Service Juridique se mobiliseront ! 😨😺🐶🦁🦊🐮🐹🐴🐔 </p>
+
+{% endblock %}

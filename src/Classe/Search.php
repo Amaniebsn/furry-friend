@@ -2,7 +2,7 @@
 
 namespace App\Classe;
 
-use App\Entity\Category;
+use App\Entity\Animals;
 
 class Search
 
@@ -14,7 +14,7 @@ class Search
     public $string = '';
 
      /**
-     * @var Category[]
+     * @var Animals[]
      */
 
     public $categories = [];
