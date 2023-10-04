@@ -35,7 +35,7 @@ class AnimalsController extends AbstractController
             }
         }
 
-        return $this->render('Animals/index.html.twig', [
+        return $this->render('animals/index.html.twig', [
             'animals' => $animals,
             'form' => $form->createView()
         ]);

@@ -13,9 +13,8 @@ use Symfony\Component\OptionsResolver\OptionsResolver;
 
 class SearchType extends AbstractType
 {
-    public function buildForm(FormBuilderInterface $builder, array $options)
-   
-   { $builder
+    public function buildForm(FormBuilderInterface $builder, array $options){ 
+    $builder
     ->add('string', TextType::class, [
         'label' => false,
         'required' => false,
@@ -23,18 +22,21 @@ class SearchType extends AbstractType
             'placeholder' => 'Rechercher...',
             'class' => 'form-control'
                   ]
-           ])
+    ])
     ->add('categories', EntityType::class, [
         'label' => false,
         'required' => false,
         'class' => Category::class,
         'multiple' => true,
         'expanded' => true,
+        'attr' => [
+            'class' => 'text-white'
+        ]
     ])
     -> add('submit', SubmitType::class,[
         'label' => 'Filtrer',
         'attr' => [
-            'class' => 'btn-block btn-light'
+            'class' => 'btn btn-lg btn-primary'
         ]
     ])
         ;
